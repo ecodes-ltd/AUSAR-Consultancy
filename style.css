@@ -1,13 +1,13 @@
 body {
-    font-family: 'Arial', sans-serif; /* Choose a web-safe font similar to the one in the profile */
+    font-family: 'Arial', sans-serif; 
     margin: 0;
     padding: 0;
-    color: #333; /* Dark gray text color */
+    color: #333; 
     line-height: 1.6;
 }
 
 nav {
-    background-color: #007bff; /* Blue background for navigation */
+    background-color: #007bff; 
     color: #fff;
     padding: 10px;
 }
@@ -35,10 +35,8 @@ section {
 }
 
 h2 {
-    color: #007bff; /* Blue headings */
-}
-
-/* Add more styles based on the profile's design */.container {
+    color: #007bff; 
+}.container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
@@ -48,7 +46,22 @@ img {
     max-width: 100%;
     height: auto;
 }.highlight {
-    background-color: #f0f8ff; /* Light blue highlight background */
+    background-color: #f0f8ff; 
     padding: 10px;
     border-radius: 5px;
+}.breadcrumbs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}.breadcrumbs li {
+    display: inline-block;
+}.breadcrumbs a {
+    color: #fff;
+    text-decoration: none;
+}.breadcrumbs li::before {
+    content: ">";
+    margin: 0 5px;
+}.breadcrumbs li:first-child::before {
+    content: "";
+    margin: 0;
 }
