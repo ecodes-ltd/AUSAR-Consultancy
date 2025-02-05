@@ -11,8 +11,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 section.classList.add("hidden");
             });
             const targetSection = document.getElementById(targetId);
-            targetSection.classList.add("visible");
-            targetSection.classList.remove("hidden");
+            if (targetSection) {
+                targetSection.classList.add("visible");
+                targetSection.classList.remove("hidden");
+            }
         });
     });
+
+    // Make the first section visible by default
+    if (sections.length > 0) {
+        sections[0].classList.add("visible");
+        sections[0].classList.remove("hidden");
+    }
 });
