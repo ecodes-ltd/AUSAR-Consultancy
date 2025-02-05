@@ -7,14 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             const targetId = this.getAttribute("href").substring(1);
             sections.forEach(section => {
-                if (section.getAttribute("id") === targetId) {
-                    section.classList.add("visible");
-                    section.classList.remove("hidden");
-                } else {
-                    section.classList.add("hidden");
-                    section.classList.remove("visible");
-                }
+                section.classList.remove("visible");
+                section.classList.add("hidden");
             });
+            const targetSection = document.getElementById(targetId);
+            targetSection.classList.add("visible");
+            targetSection.classList.remove("hidden");
         });
     });
 });
