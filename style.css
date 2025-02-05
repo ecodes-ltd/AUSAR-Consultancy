@@ -1,60 +1,61 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Light background for better contrast */
-    line-height: 1.6; /* Improved readability */
-    color: #333; /* Darker text color for better contrast */
+    background: linear-gradient(to right, #f0f0f0, #dfe6e9); /* Light gradient background */
+    line-height: 1.7;
+    color: #333;
 }
 
 /* Navigation Styles */
 nav {
-    background-color: #003366; /* Blue */
+    background: #003366;
     color: #fff;
     padding: 15px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allow wrapping of items */
+    flex-wrap: wrap;
 }
 
 nav li {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
+    font-weight: 600;
     padding: 10px 15px;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
 }
 
-nav a:hover {
-    background: #ffcc00; /* Yellow */
+nav a:hover, nav a.active {
+    background: #ffcc00;
     color: #003366;
-    border-radius: 5px;
 }
 
 /* Section Styles */
 section {
-    display: none; /* Hide all sections by default */
-    padding: 40px 20px;
-    background-color: #fff;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    display: none;
+    padding: 40px 30px;
+    background: #fff;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
@@ -63,29 +64,36 @@ section:first-of-type {
 }
 
 h2 {
-    color: #003366; /* Blue */
+    color: #003366;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
 h3 {
-    color: #003366; /* Blue */
+    color: #003366;
+    font-size: 22px;
     margin-bottom: 15px;
 }
 
 p, ul, ol {
     margin-bottom: 20px;
+    font-size: 16px;
 }
 
 ul, ol {
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 ul li, ol li {
     margin-bottom: 10px;
 }
 
+/* Team Member Styling */
 .team-member {
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .team-member h3 {
@@ -93,12 +101,30 @@ ul li, ol li {
 }
 
 .team-member h4 {
-    margin-bottom: 10px;
+    font-size: 16px;
     font-style: italic;
     color: #666;
+    margin-bottom: 10px;
 }
 
-/* Additional Styling for Interactivity */
+/* Button Styling */
+.button {
+    display: inline-block;
+    background: #ffcc00;
+    color: #003366;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.button:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Section Visibility Transitions */
 .hidden {
     opacity: 0;
     pointer-events: none;
@@ -113,8 +139,13 @@ ul li, ol li {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    nav {
+        padding: 10px;
+    }
+
     nav ul {
         flex-direction: column;
+        text-align: center;
     }
 
     nav li {
@@ -122,7 +153,15 @@ ul li, ol li {
     }
 
     section {
-        padding: 20px 10px;
+        padding: 20px 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
     }
 
     .team-member {
