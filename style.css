@@ -1,11 +1,14 @@
+/* General Styles */
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif; /* Assuming Arial, replace with actual font if known */
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0; /* Light background for better contrast */
 }
 
+/* Navigation Styles */
 nav {
-    background-color: #333;
+    background-color: #003366; /* Blue */
     color: #fff;
     padding: 10px;
 }
@@ -15,22 +18,53 @@ nav ul {
     margin: 0;
     padding: 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 nav li {
-    display: inline-block;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s;
 }
 
+nav a:hover {
+    background: #ffcc00; /* Yellow */
+    border-radius: 5px;
+}
+
+/* Section Styles */
 section {
+    display: none; /* Hide all sections by default */
     padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Show the first section by default */
+section:first-of-type {
+    display: block;
 }
 
 h2 {
-    color: #333;
+    color: #003366; /* Blue */
+}
+
+/* Additional Styling for Interactivity */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s ease-in-out;
 }
