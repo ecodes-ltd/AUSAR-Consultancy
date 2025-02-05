@@ -1,13 +1,11 @@
 body {
-    font-family: 'Arial', sans-serif; 
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-    color: #333; 
-    line-height: 1.6;
 }
 
 nav {
-    background-color: #007bff; 
+    background-color: #333;
     color: #fff;
     padding: 10px;
 }
@@ -27,7 +25,6 @@ nav li {
 nav a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
 }
 
 section {
@@ -35,33 +32,5 @@ section {
 }
 
 h2 {
-    color: #007bff; 
-}.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}.highlight {
-    background-color: #f0f8ff; 
-    padding: 10px;
-    border-radius: 5px;
-}.breadcrumbs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}.breadcrumbs li {
-    display: inline-block;
-}.breadcrumbs a {
-    color: #fff;
-    text-decoration: none;
-}.breadcrumbs li::before {
-    content: ">";
-    margin: 0 5px;
-}.breadcrumbs li:first-child::before {
-    content: "";
-    margin: 0;
+    color: #333;
 }
