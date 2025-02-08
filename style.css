@@ -382,6 +382,133 @@ h2::after {
 .service-box:hover {
     transform: translateY(-5px);
 }
+/* Key Differentiators Section */
+#differentiators {
+    background: linear-gradient(135deg, #004466, #0088aa);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 40px auto;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInSection 1s ease-in-out forwards;
+}
+
+/* Section Title */
+#differentiators h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: white; /* Ensuring color is applied */
+}
+
+/* Ordered List with Animation */
+#differentiators ol {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 80%;
+    counter-reset: differentiator-counter;
+}
+
+/* List Items with Line-by-Line Animation */
+#differentiators ol li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    counter-increment: differentiator-counter;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInItem 0.8s ease-in-out forwards;
+}
+
+/* Apply a Delay for Each Line Animation */
+#differentiators ol li:nth-child(1) { animation-delay: 0.5s; }
+#differentiators ol li:nth-child(2) { animation-delay: 1s; }
+#differentiators ol li:nth-child(3) { animation-delay: 1.5s; }
+#differentiators ol li:nth-child(4) { animation-delay: 2s; }
+#differentiators ol li:nth-child(5) { animation-delay: 2.5s; }
+
+/* Correct Numbering */
+#differentiators ol li::before {
+    content: counter(differentiator-counter) ".";
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-right: 15px;
+}
+
+/* Quote */
+#differentiators p {
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 25px;
+    color: #ffcc00;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out forwards 3s;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    #differentiators {
+        padding: 40px 15px;
+    }
+    #differentiators h2 {
+        font-size: 24px;
+    }
+    #differentiators ol {
+        max-width: 100%;
+    }
+    #differentiators ol li {
+        font-size: 16px;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInItem {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /* Team Section */
 .team-container {
