@@ -60,20 +60,49 @@ html {
     100% { background-position: 0% 50%; }
 }
 
-/* Preloader Content Centering */
-.loader-content {
-    text-align: center;
-    color: white;
+/* Preloader with Animated Gradient Background */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0044cc, #ffcc00, #ffffff, #000000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s infinite alternate ease-in-out;
     display: flex;
-    flex-direction: column;
-    align-items: center; 
     justify-content: center;
-    max-width: 90vw; /* Prevents content from overflowing */
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+    text-align: center;
+    padding: 20px; /* Added padding to prevent overlap */
+    box-sizing: border-box;
 }
 
-/* Animated Loader Icon */
+/* Animated Background */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Preloader Content Centering */
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden; /* Prevents overflow */
+}
+
+/* Logo Image */
 .spinner {
     width: 100px;
+    height: auto;
+    max-width: 80vw;
+    max-height: 40vh;
+    object-fit: contain; /* Ensures the logo scales properly */
     animation: spin 1.5s linear infinite;
 }
 
@@ -82,6 +111,7 @@ html {
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
+    white-space: nowrap; /* Prevents text from wrapping awkwardly */
 }
 
 /* Blinking Dots */
@@ -116,15 +146,18 @@ html {
 /* Responsive Fix for Mobile Devices */
 @media (max-width: 600px) {
     .spinner {
-        width: 70px; /* Smaller icon for better fit */
+        width: 70px; /* Smaller logo */
+        max-width: 70vw;
+        max-height: 30vh;
     }
     .loading-text {
-        font-size: 16px; /* Reduce font size for better readability */
+        font-size: 16px; /* Adjust font size */
     }
     .loader-content {
-        max-width: 80vw; /* Adjust content width */
+        max-width: 85vw;
     }
 }
+
 
 /* Services Grid */
 .services-container {
