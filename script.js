@@ -1,36 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll("nav ul li a");
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
 
-    function showSection(targetId) {
+    function hideAllSections() {
         sections.forEach(section => {
-            section.classList.remove("visible");
-            section.classList.add("hidden");
+            section.style.display = "none";
         });
-
-        navLinks.forEach(link => link.classList.remove("active"));
-
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            targetSection.classList.add("visible");
-            targetSection.classList.remove("hidden");
-        }
-
-        const activeLink = document.querySelector(`nav a[href="#${targetId}"]`);
-        if (activeLink) {
-            activeLink.classList.add("active");
-        }
     }
 
-    navLinks.forEach(link => {
-        link.addEventListener("click", function(event) {
+    function showSection(sectionId) {
+        hideAllSections();
+        document.getElementById(sectionId).style.display = "block";
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function (event) {
             event.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            showSection(targetId);
+            const targetSection = this.getAttribute("href").substring(1);
+            showSection(targetSection);
         });
     });
 
-    // Show the first section by default
+    // Initialize - Show the first section by default
     if (sections.length > 0) {
         showSection(sections[0].id);
     }
