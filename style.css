@@ -282,6 +282,7 @@ nav ul li:not(:last-child)::after {
     height: 20px;
     width: 2px;
     background: rgba(255, 255, 255, 0.7); /* Light separator */
+    opacity: 1; /* Ensure full visibility */
 }
 
 /* Links */
