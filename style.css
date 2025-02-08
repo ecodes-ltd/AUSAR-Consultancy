@@ -243,18 +243,37 @@ nav {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Navigation Menu */
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap; /* Wrap items on small screens */
 }
 
+/* Menu Items */
 nav ul li {
-    margin: 0 20px;
+    margin: 0;
+    padding: 10px 20px;
+    position: relative;
+    white-space: nowrap; /* Prevents line breaks */
 }
 
+/* Separator Line Between Items */
+nav ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -2px; /* Position closer */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.7); /* Light separator */
+}
+
+/* Links */
 nav ul li a {
     color: white;
     text-decoration: none;
@@ -263,8 +282,24 @@ nav ul li a {
     transition: color 0.3s ease-in-out;
 }
 
+/* Hover Effect */
 nav ul li a:hover {
     color: #ffcc00;
+}
+
+/* Mobile-Friendly Navigation */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap; /* Ensures items wrap on small screens */
+    }
+
+    nav ul li {
+        padding: 8px 15px;
+    }
+
+    nav ul li:not(:last-child)::after {
+        height: 15px; /* Reduce separator size */
+    }
 }
 
 /* Section Styling */
