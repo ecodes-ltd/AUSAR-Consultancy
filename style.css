@@ -16,6 +16,7 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -24,6 +25,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    transition: all 0.3s ease-in-out;
 }
 
 nav ul li {
@@ -35,45 +37,61 @@ nav ul li a {
     color: white;
     font-weight: bold;
     padding: 10px 15px;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
     background-color: #FFD700; /* Yellow */
     color: #003366;
     border-radius: 5px;
+    transform: scale(1.1);
 }
 
 /* Sections */
 section {
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h1, h2 {
     color: #003366;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 p {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 /* Buttons */
 .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: #FFD700;
     color: #003366;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
     background-color: #003366;
     color: #FFD700;
+    transform: scale(1.1);
 }
 
 /* Responsive Grid Layout */
@@ -84,13 +102,19 @@ p {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    animation: fadeInUp 1s ease-out;
 }
 
 .grid-item {
     background: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
 }
 
 /* Footer */
@@ -100,6 +124,10 @@ footer {
     text-align: center;
     padding: 15px;
     margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */
@@ -110,5 +138,21 @@ footer {
     
     nav ul li {
         margin-bottom: 10px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
