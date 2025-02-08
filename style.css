@@ -194,6 +194,8 @@ html {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 /* YouTube Video Wrapper */
@@ -209,7 +211,10 @@ html {
 .video-container iframe {
     width: 100%;
     height: 100%;
-    border: none;
+    border: none !important; /* Ensure no border */
+    outline: none;
+    margin: 0;
+    padding: 0;
 }
 
 
