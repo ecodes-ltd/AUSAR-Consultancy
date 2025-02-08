@@ -187,49 +187,79 @@ html {
             transform: translateY(-10px) scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
- .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-       /* Hero Section */
+ /* Hero Section (Removes background, keeping only the TV visible) */
 .hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height */
-    background-color: #111; /* Dark background for realism */
+    height: 100vh; /* Full screen height */
+    background: transparent; /* No background outside the TV */
 }
 
 /* TV Frame */
-.hero iframe {
-    width: 80vw; /* Adjust width based on screen size */
-    max-width: 800px; /* Limit size for larger screens */
+.tv-frame {
+    position: relative;
+    width: 80vw; /* Responsive width */
+    max-width: 800px; /* Limit max size */
     height: 45vw; /* Maintain 16:9 aspect ratio */
-    max-height: 450px; /* Limit height */
-    
-    border: 12px solid black; /* Thick black border like a TV frame */
-    border-radius: 20px; /* Slightly rounded corners like modern TVs */
-    
+    max-height: 450px;
+    background: black; /* TV border */
+    border-radius: 20px; /* Rounded edges for realism */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 
-                inset 0 0 10px rgba(255, 255, 255, 0.1); /* Outer glow and subtle inner light */
-    
-    background: #222; /* Dark background for a realistic TV screen effect */
-    
-    transform: perspective(800px) rotateX(2deg); /* Slight 3D tilt */
+                inset 0 0 10px rgba(255, 255, 255, 0.1); /* Outer & inner glow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure content stays within the TV */
 }
 
-/* Responsive Fix for Small Screens */
+/* TV Screen */
+.tv-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove iframe border */
+    border-radius: 15px; /* Slight curve to match TV shape */
+}
+
+/* TV Stand */
+.tv-stand {
+    position: absolute;
+    bottom: -30px; /* Positions the stand below the TV */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px; /* Stand width */
+    height: 30px; /* Stand height */
+    background: black; /* Match TV color */
+    border-radius: 10px 10px 0 0; /* Curve the top edges */
+}
+
+/* TV Legs */
+.tv-leg {
+    position: absolute;
+    bottom: -50px; /* Move below TV */
+    width: 20px;
+    height: 50px;
+    background: black;
+}
+
+/* Left & Right Legs */
+.tv-leg.left { left: 20%; }
+.tv-leg.right { right: 20%; }
+
+/* Responsive Fix for Mobile Screens */
 @media (max-width: 600px) {
-    .hero iframe {
+    .tv-frame {
         width: 90vw;
         height: 50vw;
-        border: 8px solid black; /* Slightly smaller frame on mobile */
         border-radius: 15px;
+    }
+    .tv-stand {
+        width: 80px;
+        height: 20px;
+    }
+    .tv-leg {
+        width: 15px;
+        height: 40px;
     }
 }
 
