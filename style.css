@@ -531,6 +531,7 @@ h2::after {
     border-bottom: 3px solid #ffcc00;
     display: inline-block;
     padding-bottom: 5px;
+    color: white;
 }
 
 /* Team Grid */
