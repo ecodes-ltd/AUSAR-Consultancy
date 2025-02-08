@@ -37,10 +37,38 @@ html {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+/* Preloader with Animated Gradient Background */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0044cc, #ffcc00, #ffffff, #000000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s infinite alternate ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+    text-align: center; /* Ensure text and elements are centered */
+}
+
+/* Animated Background */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* Preloader Content Centering */
 .loader-content {
     text-align: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    max-width: 90vw; /* Prevents content from overflowing */
 }
 
 /* Animated Loader Icon */
@@ -84,6 +112,20 @@ html {
 #loader.removed {
     display: none;
 }
+
+/* Responsive Fix for Mobile Devices */
+@media (max-width: 600px) {
+    .spinner {
+        width: 70px; /* Smaller icon for better fit */
+    }
+    .loading-text {
+        font-size: 16px; /* Reduce font size for better readability */
+    }
+    .loader-content {
+        max-width: 80vw; /* Adjust content width */
+    }
+}
+
 /* Services Grid */
 .services-container {
             display: grid;
