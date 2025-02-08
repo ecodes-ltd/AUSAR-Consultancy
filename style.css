@@ -37,10 +37,6 @@ html {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-#loader img {
-            width: 150px;
-            height: auto;
-            max-width: 80%; /* Ensures it scales properly on mobile */
 /* Preloader Content Centering */
 .loader-content {
     text-align: center;
