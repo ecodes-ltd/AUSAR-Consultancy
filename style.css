@@ -734,3 +734,80 @@ footer {
                 grid-template-columns: 1fr;
             }
         }
+
+/* Clients Section */
+#clients {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+#clients h2 {
+    color: #004466;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#clients p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Client Boxes */
+.client-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 200px;
+}
+
+.client-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Icons */
+.client-box img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+/* Client Text */
+.client-box p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #004466;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .client-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .client-box {
+        width: 150px;
+        padding: 15px;
+    }
+    .client-box img {
+        width: 60px;
+        height: 60px;
+    }
+    .client-box p {
+        font-size: 14px;
+    }
+}
