@@ -196,20 +196,42 @@ html {
             justify-content: center;
             overflow: hidden;
         }
-        .hero iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .hero-content {
-            position: absolute;
-            z-index: 1;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-        }
+       /* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    background-color: #111; /* Dark background for realism */
+}
+
+/* TV Frame */
+.hero iframe {
+    width: 80vw; /* Adjust width based on screen size */
+    max-width: 800px; /* Limit size for larger screens */
+    height: 45vw; /* Maintain 16:9 aspect ratio */
+    max-height: 450px; /* Limit height */
+    
+    border: 12px solid black; /* Thick black border like a TV frame */
+    border-radius: 20px; /* Slightly rounded corners like modern TVs */
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 
+                inset 0 0 10px rgba(255, 255, 255, 0.1); /* Outer glow and subtle inner light */
+    
+    background: #222; /* Dark background for a realistic TV screen effect */
+    
+    transform: perspective(800px) rotateX(2deg); /* Slight 3D tilt */
+}
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 600px) {
+    .hero iframe {
+        width: 90vw;
+        height: 50vw;
+        border: 8px solid black; /* Slightly smaller frame on mobile */
+        border-radius: 15px;
+    }
+}
 
 
 /* Header with Logo */
