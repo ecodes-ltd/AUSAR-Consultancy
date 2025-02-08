@@ -292,7 +292,11 @@ nav ul li a {
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
-
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
 /* Hover Effect */
 nav ul li a:hover {
     color: #ffcc00;
